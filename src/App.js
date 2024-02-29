@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Carte from "./Carte";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+const firstName = prompt(" ton nom ?"); 
+const isFirstNammeProvided = firstName  !== null && firstName.trim() !== "";
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div>
+      <div>
+        <p> HELLO , {isFirstNammeProvided ? firstName : 'There'} !</p>
+      </div>
+      <Carte/>
+      <div>
+        {
+          isFirstNammeProvided && (
+            <img width={'250px'} src="/image/buy-1.jpg " alt="image"></img>
+          )
+        }
+      </div>
+     </div>
   );
 }
 
